@@ -9,7 +9,7 @@ Launch a conatiner and make the use of it's ip dynamically for configuring it as
 1) ssh pass is installed already<br>
 2) docker is installed already<br>
 3) docker service is started<br>
-4) the ssh is already enabled in the container either u do or pull the ssh enabled image<br>
+4) the ssh enabled image is already present on the docker host<br>
 5) docker-py library is installed<br>
 6) ansible>=2.0<br>
 
