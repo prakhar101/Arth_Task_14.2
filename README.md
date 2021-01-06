@@ -5,11 +5,11 @@ Launch a conatiner and make the use of it's ip dynamically for configuring it as
 <p>while the <a href="https://raw.githubusercontent.com/ansible/ansible/stable-2.9/contrib/inventory/docker.yml">docker.yml</a> is the file for doing dome change in the configuration of <a href="https://raw.githubusercontent.com/ansible/ansible/stable-2.9/contrib/inventory/docker.yml">docker.yml</a> file</p>
 
 <h2> Pre-Requirements </h2>
-1) ssh pass is installed already
-2) docker is installed already
-3) docker service is started
-4) the ssh is already enabled in the container either u do or pull the ssh enabled image
-5) docker-py library is installed
-6) ansible>=2.0
+1) ssh pass is installed already<br>
+2) docker is installed already<br>
+3) docker service is started<br>
+4) the ssh is already enabled in the container either u do or pull the ssh enabled image<br>
+5) docker-py library is installed<br>
+6) ansible>=2.0<br>
 
 
