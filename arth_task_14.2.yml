@@ -1,0 +1,45 @@
+- hosts : localhost
+  tasks :
+  - name : launching the container
+    docker_container :
+            name : "webserver"
+            image : "my_image"
+            interactive : yes
+            tty : yes
+            detach : yes
+            ports : "8080:80"
+ 
+  - name : creating firewall rule for port number 8080
+    firewalld :
+            port : "8080/tcp"
+            state : enabled
+            immediate : yes
+            permanent : yes
+
+  - name : just refershing the inventory so that the value of teh group vars get update
+    meta : refresh_inventory
+
+
+- hosts : webserver    
+  connection : docker 
+  tasks :
+  - name : installing the web server program
+    block :
+    - package :
+            name : "httpd"
+            state : present
+
+    rescue :
+    - package :
+            name : "apache2"
+            state : present
+
+  - name : uploading the web pages to the doc root
+    copy :
+            dest : "/var/www/html/index.html"
+            content : "This is the index file of the docker!!!\n"
+
+  - name : command for starting the httpd service
+    command : "/usr/sbin/httpd"
+
+
